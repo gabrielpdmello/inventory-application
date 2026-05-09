@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <%- include("partials/header.ejs") %>
+        <h2><%= item.name %></h2>
+            <form class="form-container" action="/edititem/<%= item.id %>" method="POST">
+            <span class="form-row">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" value="<%= item.name %>">
+            </span>
+            <span class="form-row">
+                <label for="description">Description</label>
+                <textarea id="description" name="description"><%= item.description %></textarea>
+            </span>
+            <span class="form-row">
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                    <% categories.forEach((category)=> { %>
+                        <option value="<%= category.id %>" <%= category.id === item.categoryid ? 'selected' : '' %>>
+                            <%= category.name %>
+                        </option>
+                        <% }) %>
+                </select>
+            </span>
+            <span class="form-row">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" value="<%= item.quantity %>">
+            </span>
+            <span class="form-row">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+            </span>
+            <%- include("partials/error.ejs") %>
+            <span class="btn-container">
+                <button class="btn" type="submit">Edit item</button>
+                <button class="btn" type="submit" formaction="/deleteitem/<%= item.id %>">Delete Item</button>
+            </span>
+        </form>
+</body>
+
+</html>

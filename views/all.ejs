@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <%- include("partials/header.ejs") %>
+        <h2>All items</h2>
+        <table>
+            <thead>
+                <tr class="row-heading">
+                    <th class="text-start">Name</th>
+                    <th class="col-narrow">Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="spacer">
+                    <td></td>
+                </tr>
+                <% items.forEach((item)=> { %>
+                    <tr>
+                        <td>
+                            <a href="/item/<%= item.id %>">
+                                <%= item.name %>
+                            </a>
+                        </td>
+                        <td class="text-end">
+                            <a href="/item/<%= item.id %>" tabindex="-1">
+                                <%= item.quantity %>
+                            </a>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+</body>
+
+</html>

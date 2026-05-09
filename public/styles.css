@@ -1,0 +1,288 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-bg-color: rgb(34, 114, 126);
+    --secondary-bg-color: rgb(206, 248, 255);
+}
+
+body {
+    margin: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    margin-bottom: 3rem;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    padding-left: 8rem;
+}
+
+.logo-icon {
+    background-image: url("./box-svgrepo-com.svg");
+    width: 3rem;
+    height: 3rem;
+    display: inline-block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    column-gap: 3rem;
+    background-color: var(--primary-bg-color);
+    padding: 1.4rem 3rem;
+    border-radius: 50px;
+}
+
+nav li {
+    display: inline;
+    text-wrap: nowrap;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 0.6rem 2rem;
+    border-radius: 50px;
+    color: white;
+    transition: background-color 200ms, color 200ms;
+}
+
+nav a:hover {
+    background-color: var(--secondary-bg-color);
+    color: black;
+
+}
+
+.container, .container--item {
+    background-color: var(--primary-bg-color);
+    border-radius: 30px;
+    padding: 3rem;
+}
+
+.container--item {
+    color: white;
+    position: relative;
+}
+
+.container--item h2 {
+    font-size: 2rem;
+}
+
+.back {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    color: inherit;
+    font-size: 1.4rem;
+}
+
+h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 0 0 2rem 0;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+    padding: 3rem 0;
+}
+
+.card {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: var(--secondary-bg-color);
+    position: relative;
+    color: black;
+    transition: color 200ms, background-color 200ms, box-shadow 200ms;
+}
+
+.card h3 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.card a {
+    color: inherit;
+    text-decoration: none;
+
+}
+
+.card a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.category-icon {
+    display: block;
+    height: 7rem;
+    width: 7rem;
+    margin: 0 auto;
+    transition: filter 200ms;
+}
+
+.card:hover .category-icon {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(7%) saturate(418%) hue-rotate(286deg) brightness(114%) contrast(100%);
+    color: white;
+}
+
+.card:hover {
+    color: white;
+    background-color: var(--primary-bg-color);
+    box-shadow: 0 0 0 3px white;
+}
+
+.card p {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+table {
+    width: 100%;
+    background-color: var(--primary-bg-color);
+    padding: 0 0.6rem 0.6rem 0.6rem;
+    border-radius: 10px;
+
+}
+
+th {
+    font-size: 1.4rem;
+    background-color: var(--primary-bg-color);
+
+}
+
+.spacer {
+    height: 1rem;
+    background-color: var(--primary-bg-color);
+
+}
+
+tr {
+    background-color: white;
+}
+
+tr:nth-child(even) {
+  background-color: var(--secondary-bg-color);
+}
+
+.text-start {
+    text-align: start;
+}
+
+.text-end {
+    text-align: end;
+}
+
+.col-narrow {
+    width: 2rem;
+}
+
+.row-heading {
+    margin-bottom: 3rem;
+    color: white;
+}
+
+th {
+    padding: 0.6rem 1rem;
+}
+
+/* fix: 1px gap between clickable columns */
+td a { 
+   display: block; 
+   padding: 1rem; 
+   text-decoration: none;
+   color: black;
+}
+
+.form-container {
+    background-color: var(--primary-bg-color);
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    color: white;
+}
+
+.form-row {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.form-row label {
+    display: block;
+    margin-bottom: 0.6rem;
+}
+
+.form-row input, .form-row textarea, .form-row select {
+    width: 100%;
+    border-radius: 5px;
+    padding: 0.6rem 0.6rem;
+    border: none;
+    background-color: var(--secondary-bg-color);
+    font-family: inherit;
+}
+
+.form-row input[type="number"], .form-row select {
+    width: auto;
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.category-header {
+    position: relative;
+}
+
+.link {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: black;
+    font-size: 1.4rem;
+    padding-top: 1rem;
+}
+
+.btn {
+    background-color: var(--primary-bg-color);
+    padding: 0.6rem 3rem;
+    cursor: pointer;
+    border-radius: 50px;
+    display: block;
+    width: fit-content;
+    color: black;
+    text-decoration: none;
+    transition: background-color 200ms, color 200ms;
+    border: 2px solid white;
+    font-size: 1rem;
+    color: white;
+
+}
+
+.btn:hover {
+    background-color: var(--secondary-bg-color);
+    color: black;
+}

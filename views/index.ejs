@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <%- include("partials/header.ejs") %>
+        <h2>All categories</h2>
+        <div class="container">
+            <div class="card-container">
+                <% categories.forEach((category)=> { %>
+                    <article class="card">
+                        <h3>
+                            <a href="/category/<%= category.id %>">
+                                <%= category.name %>
+                            </a>
+                        </h3>
+                        <img src="<%= category.icon ? category.icon : "./category-icon.svg" %>" class="category-icon" />
+                        <p>
+                            <%= category.description %>
+                        </p>
+                    </article>
+                    <% }) %>
+            </div>
+        </div>
+</body>
+
+</html>
