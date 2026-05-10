@@ -29,6 +29,7 @@ const validateItem = [
         .notEmpty().withMessage('Please select a category.'),
     body('quantity')
         .notEmpty().withMessage('Please insert a quantity.')
+        .isInt({ min: 0}).withMessage('Quantity must be 0 or more.')
 ]
 
 function errorHandler(err, req, res, next) {
