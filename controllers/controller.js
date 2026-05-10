@@ -31,6 +31,12 @@ const validateItem = [
         .notEmpty().withMessage('Please insert a quantity.')
 ]
 
+function errorHandler(err, req, res, next) {
+    res.status(500)
+    res.render('error', { error: err, repoUrl: process.env.REPO_URL })
+
+}
+
 async function getCategories(req, res, next) {
     try {
         const rows = await db.getCategories();
@@ -256,6 +262,7 @@ const postDeleteCategory = [
 ]
 
 module.exports = {
+    errorHandler,
     getCategories,
     getCategoryItems,
     getItem,

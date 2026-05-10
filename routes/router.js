@@ -26,5 +26,6 @@ router.post('/deleteitem/:itemId', controller.postDeleteItem);
 
 router.post('/deletecategory/:categoryId', controller.postDeleteCategory);
 
+router.use(controller.errorHandler);
 
 module.exports = router;
